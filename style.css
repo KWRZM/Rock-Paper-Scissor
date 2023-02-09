@@ -1,7 +1,7 @@
 html {
     font-size: 10px;
-    background: url('./bg.png') bottom center;
-    background-size: cover;
+    background: url('./bg.png') ;
+    background-size:cover;
 }
 body,html {
     margin: 0;
@@ -11,13 +11,14 @@ body,html {
 .choix{
     display: flex;
     flex: 1;
-    min-height: 100vh;
+    padding: 60px;
     align-items: center;
     justify-content: center;
+ 
 }
 kbd {
     display: block;
-    font-size: 4rem;
+    font-size: 3.5rem;
 }
 .bout {
     border: .4rem solid purple;
@@ -31,4 +32,32 @@ kbd {
     color: white;
     background: gray;
     text-shadow: 0 0 .5rem black;
+}
+.playing{
+    transform: scale(1.2);
+    border-color: #ffc600;
+    box-shadow: 0 0 10px #ffc600;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0px;
+}
+.C2{
+    border: solid white;
+    text-align: center;
+    font-size: 100px;
+    color: white;
+    padding-left: 13%;
+    padding-right: 13%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: rgba(192,192,192,0.3);
+
+}
+.ktiba{
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    border-width: 5px;
 }

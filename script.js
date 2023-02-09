@@ -43,6 +43,13 @@ function visualResultWithAlert(value){
         case -1:alert("You lost...");return;
     }
 }
+function visualResultWithAlert2(value){
+    switch(value){
+        case 0:return"Match null";
+        case 1:return "You won!";
+        case -1:return "You lost...";
+    }
+}
 
 function retResult(value){
     switch(value){
@@ -75,5 +82,25 @@ function game(rounds){
 const click = document.querySelector("#parent");
 click.addEventListener('click',function(e){
     console.log(e);
-    visualResultWithAlert(palyRound(e.target.outerText,getComputerChoice()));
+    if(e.target.outerText == "Rock" || e.target.outerText == "Scissor" || e.target.outerText == "Paper"){
+        const pressed = document.getElementById(`${e.target.outerText}`);
+        pressed.classList.add('playing');
+
+        setTimeout(function(){
+            pressed.classList.remove('playing');
+        },90);
+        let temp;
+        let result = visualResultWithAlert2(temp=palyRound(e.target.outerText,getComputerChoice()));
+        const ktiba = document.querySelector(".ktiba");
+        ktiba.textContent=result;
+        ktiba.style.fontweight="bold";
+
+        console.log(temp);
+        switch(temp){
+            case 1:  ktiba.style.color= "green";break;
+            case -1: ktiba.style.color= "red";break;
+            case 0:  ktiba.style.color= "blue";break;
+        }
+
+    }
 });
